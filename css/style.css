@@ -9,6 +9,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: #222;
+
 }
 
 .wrapper {
@@ -159,6 +160,8 @@ main {
 #sliderHome div:hover {
     background-color: #222;
     border: solid 1px #fff;
+    animation: heartBeat;
+    animation-duration: 2s;
 }
 
 #sliderHome div a:hover {
@@ -196,6 +199,8 @@ main {
 #coleccionesPrincipales div a:hover {
     background-color: #222;
     border: solid 1px #fff;
+    animation: heartBeat;
+    animation-duration: 2s;
 }
 
 #catPpal1 {
@@ -261,15 +266,24 @@ main {
 #artistasNacionales div:hover {
     background-color: #222;
     border: solid 1px #fff;
+    animation: heartBeat;
+    animation-duration: 2s;
 }
 
 #artistasNacionales div a:hover {
     color: #fff;
+    animation: heartBeat;
+    animation-duration: 2s;
 }
 
 #masVendidos img {
     width: 325px;
 
+}
+
+#masVendidos img:hover {
+    animation: jello;
+    animation-duration: 2s;
 }
 
 #masVendidos p {
@@ -306,6 +320,15 @@ main {
     border-radius: 99px;
     border: 1px solid #222;
 }
+
+#opinionesClientes img:hover {
+    animation: pulse;
+    animation-duration: 2s;
+
+}
+
+
+
 
 #opinionesClientes p {
     padding: 10px 20px;
@@ -460,6 +483,8 @@ main {
 /* Estilos Footer */
 footer {
     margin-top: 30px;
+    background: rgb(180, 180, 180);
+    background: linear-gradient(0deg, rgba(180, 180, 180, 1) 0%, rgba(255, 255, 255, 1) 40%);
 }
 
 footer nav ul {
@@ -476,12 +501,13 @@ footer nav ul li a {
     color: #222;
 }
 
-footer nav ul li:hover {
+/* footer nav ul li:hover {
     background-color: #222;
-}
+} */
 
 footer nav ul li a:hover {
-    color: #fff;
+    color: #222;
+    text-decoration: underline;
 }
 
 footer input {
@@ -494,7 +520,7 @@ footer .noInline li {
 }
 
 .preFooter {
-    background-color: #e3e3e3;
+
     padding: 10px;
     line-height: 25px;
 }
@@ -530,7 +556,7 @@ footer .noInline li {
 
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
-   /*  body {
+    /*  body {
         background-color: red;
     } */
 
@@ -712,7 +738,7 @@ footer .noInline li {
 
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1025px) and (max-width: 1280px) {
-   /*  body {
+    /*  body {
         background-color: green;
     } */
 
