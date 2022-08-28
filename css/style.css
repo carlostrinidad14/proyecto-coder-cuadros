@@ -39,6 +39,7 @@ body {
 
 .coleccionesPrincipales {
     grid-area: coleccionesPrincipales;
+    text-align: center;
 }
 
 .artistasNacionales {
@@ -47,6 +48,7 @@ body {
 
 .masVendidos {
     grid-area: masVendidos;
+    text-align: center;
 }
 
 .opinionesClientes {
@@ -63,7 +65,6 @@ body {
 
 /* Estilos heder */
 header {
-    height: 100px;
     padding: 20px;
     /* position: fixed;
     width: 1300px; */
@@ -100,6 +101,14 @@ header input {
     border: none;
 }
 
+.navbar-toggler {
+    background-image: url("../images/navIcon.png");
+}
+
+.navbar-toggler-icon {
+    background-image: url("../images/navIcon.png");
+}
+
 /* Estilos generales */
 section {
     margin-top: 60px;
@@ -123,49 +132,8 @@ main {
 
 /* Estilos index */
 #sliderHome {
-    height: 440px;
-    padding: 50px;
-    background-image: url("../images/escritorioCuadro.png");
     margin-top: 0px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
-#sliderHome h1 {
-    margin-top: 50px;
-    font-size: 42px;
-}
-
-#sliderHome p {
-    margin-top: 20px;
-    font-style: italic;
-}
-
-#sliderHome div {
-    margin-top: 180px;
-    width: 150px;
-    font-weight: 600;
-    font-size: 18px;
-    background-color: #BEA684;
-    border: #fff solid 1px;
-    text-align: center;
-    color: #fff;
-    padding: 5px;
-}
-
-#sliderHome div a {
-    color: #fff;
-}
-
-#sliderHome div:hover {
-    background-color: #222;
-    border: solid 1px #fff;
-    animation: heartBeat;
-    animation-duration: 2s;
-}
-
-#sliderHome div a:hover {
-    color: #fff;
 }
 
 #coleccionesPrincipales div div {
@@ -180,6 +148,7 @@ main {
     font-size: 40px;
     padding-top: 100px;
     font-weight: 600;
+    text-align: left;
 }
 
 #coleccionesPrincipales div div a {
@@ -224,7 +193,7 @@ main {
 }
 
 #artistasNacionales {
-    height: 250px;
+    height: 380px;
     background-image: url("../images/artistasNacionales.png");
     padding: 50px;
     margin-top: 15px;
@@ -326,9 +295,6 @@ main {
     animation-duration: 2s;
 
 }
-
-
-
 
 #opinionesClientes p {
     padding: 10px 20px;
@@ -457,6 +423,16 @@ main {
     text-align: justify;
 }
 
+.accordion-button:not(.collapsed) {
+    color: #fff !important;
+    background-color: #222 !important;
+}
+
+.accordion-button:focus {
+    border-color: #444 !important;
+    box-shadow: 0 0 0 0.25rem rgba(88, 88, 88, 0.25) !important;
+}
+
 /* Estilos contacto */
 #contacto {
     text-align: center;
@@ -554,6 +530,23 @@ footer .noInline li {
     text-decoration: underline;
 }
 
+.btn-outline-success {
+    border-radius: 0px !important;
+    border-color: #222 !important;
+    color: #222 !important;
+}
+
+.btn-outline-success:hover {
+
+    background-color: #222 !important;
+    border-color: #fff !important;
+    color: #fff !important;
+}
+
+.form-control {
+    border-radius: 0px !important;
+}
+
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
     /*  body {
@@ -584,8 +577,9 @@ footer .noInline li {
 
     header nav ul li {
         margin: 10px 2px;
-        width: 70%;
     }
+
+
 
     #contactoFooter {
         width: 100%;
@@ -645,7 +639,7 @@ footer .noInline li {
 
     header nav ul li {
         margin: 10px 2px;
-        width: 70%;
+
     }
 
     #contactoFooter {
