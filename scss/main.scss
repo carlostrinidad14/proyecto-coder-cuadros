@@ -1,0 +1,29 @@
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    /* box-sizing: border-box; */
+}
+
+body {
+    font-family: 'Roboto', sans-serif !important;
+    color: $colorBase ;
+
+}
+
+/* Clase para extend de h1,h2 etc */
+.headings {
+    color: $colorBase;
+}
+
+@import 'grid';
+@import 'header';
+@import 'index';
+@import 'tienda';
+@import 'producto';
+@import 'quienesSomos';
+@import 'contacto';
+@import 'footer';
+@import 'mediaqueries';

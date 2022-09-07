@@ -1,0 +1,47 @@
+header {
+    padding: 20px;
+    /* position: fixed;
+    width: 1300px; */
+    background-color: #fff;
+    z-index: 2;
+    top: 0;
+
+    nav ul {
+        float: right;
+        padding: 33px;
+
+        li {
+            display: inline-block;
+            padding: 10px;
+            border: solid 1px;
+            margin: 0 10px;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: $colorBase;
+            }
+
+            &:hover>a {
+                color: #fff;
+            }
+
+            a {
+                color: $colorBase;
+
+            }
+        }
+    }
+
+    .navbar-toggler {
+        background-image: url("../images/navIcon.png");
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("../images/navIcon.png");
+    }
+
+    input {
+        border: none;
+
+    }
+}

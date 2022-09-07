@@ -1,0 +1,212 @@
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+
+    /*  body {
+        background-color: red;
+    } */
+    .flexH {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #coleccionesPrincipales div div {
+
+        height: 350px;
+        width: 80%;
+    }
+
+    header {
+        text-align: center;
+        height: auto;
+        padding: 10px 0 0 0;
+
+        nav ul {
+            float: none;
+            padding: 33px 0px;
+
+            li {
+                margin: 10px 2px;
+            }
+        }
+    }
+
+    #contactoFooter {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+
+    #servicioFooter {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    #newsletterFooter {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .itemTienda {
+        width: 100%;
+    }
+
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+    /* body {
+        background-color: yellow;
+    } */
+
+    .flexH {
+
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    #coleccionesPrincipales div div {
+
+        height: 350px;
+        width: 80%;
+    }
+
+    header {
+        text-align: center;
+        height: auto;
+        padding: 10px 0 0 0;
+
+        nav ul {
+            float: none;
+            padding: 33px 0px;
+
+            li {
+                margin: 10px 2px;
+
+            }
+        }
+    }
+
+    #contactoFooter {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+
+    #servicioFooter {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+
+
+    #newsletterFooter {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .itemTienda {
+        width: 100%;
+    }
+}
+
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* body {
+        background-color: blue;
+    } */
+
+    .flexH {
+
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    #coleccionesPrincipales div div {
+
+        height: 350px;
+        width: 80%;
+    }
+
+    header {
+        text-align: center;
+        height: auto;
+        padding: 10px 0 0 0;
+        nav ul {
+            float: none;
+            padding: 33px 0px;
+            li {
+                margin: 10px 2px;
+            }
+        }
+    }
+
+    #contactoFooter {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+
+    #servicioFooter {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+
+
+    #newsletterFooter {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .itemTienda {
+        width: 33%;
+    }
+}
+
+
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    /*  body {
+        background-color: green;
+    } */
+
+    .flexH {
+
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    #coleccionesPrincipales div div {
+
+        height: 350px;
+        width: 25%;
+    }
+
+    #masVendidos img {
+        width: 450px;
+    }
+
+}
+
+
+
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
+    body {
+        background-color: white;
+    }
+}

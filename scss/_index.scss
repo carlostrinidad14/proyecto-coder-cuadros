@@ -1,0 +1,232 @@
+section {
+    margin-top: 60px;
+}
+
+h4 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+main {
+    margin-top: 150px;
+}
+
+.flexH {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-outline-success {
+    border-radius: 0px !important;
+    border-color: #222 !important;
+    color: #222 !important;
+}
+
+.btn-outline-success:hover {
+
+    background-color: #222 !important;
+    border-color: #fff !important;
+    color: #fff !important;
+}
+
+.form-control {
+    border-radius: 0px !important;
+}
+
+#sliderHome {
+    margin-top: 0px;
+ h2{
+    @extend .headings;
+    background-color: rgba(223, 223, 223, 0.7);
+    padding: 15px 15px 0px 15px;
+    margin-bottom: 0px;
+ }
+ p{
+    color: $colorBase;
+    background-color: rgba(223, 223, 223, 0.7);
+    padding: 15px;
+ }
+}
+
+#coleccionesPrincipales {
+    div div {
+        display: inline-block;
+        height: 350px;
+        width: 33%;
+        padding: 15px 30px;
+        margin: 10px;
+
+        a {
+            display: block;
+            width: 90px;
+            padding: 5px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            bottom: -100px;
+            font-size: 18px;
+            background-color: $colorDestacado;
+            border: #fff solid 1px;
+            text-decoration: none;
+            &:nth-of-type(1) {
+                @include background-transition($colorDestacado, $colorBase);
+              }
+        }
+
+    }
+
+    p {
+        font-size: 40px;
+        padding-top: 100px;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    #catPpal1 {
+        background-image: url("../images/abstractCat.png");
+        color: #fff;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #catPpal2 {
+        background-image: url("../images/botanicaCat.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #catPpal3 {
+        background-image: url("../images/robotCat.png");
+        color: $colorDestacado;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+#artistasNacionales {
+    height: 380px;
+    background-image: url("../images/artistasNacionales.png");
+    padding: 50px;
+    margin-top: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    h3 {
+        margin-top: 30px;
+        font-size: 42px;
+        background-color: #fff;
+        width: 500px;
+    }
+
+    p {
+        margin-top: 20px;
+        font-style: italic;
+        width: 500px;
+        background-color: #fff;
+    }
+
+    div {
+        margin-top: 80px;
+        width: 150px;
+        text-decoration: none;
+        font-size: 18px;
+        background-color: $colorDestacado;
+        border: #fff solid 1px;
+        text-align: center;
+        color: #fff;
+        padding: 5px;
+
+        &:nth-of-type(1) {
+            @include background-transition($colorDestacado, $colorBase);
+          }
+
+        a {
+            color: #fff;
+
+            &:hover {
+                color: #fff;
+                animation: heartBeat;
+                animation-duration: 2s;
+            }
+        }
+    }
+}
+
+#masVendidos {
+    img {
+        width: 325px;
+
+        &:hover {
+            animation: jello;
+            animation-duration: 2s;
+            
+        }
+    }
+
+    div {
+        color: $colorBase;
+        text-align: center;
+        justify-content: center;
+       
+    }
+
+    .prodTit {
+        color: $colorBase;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 35px;
+        font-size: 21px;
+    }
+
+    .prodPrice {
+
+        padding: 15px 30px;
+        color: $colorDestacado;
+        font-weight: 800;
+        border-top: 1px solid $colorBase;
+    }
+
+}
+
+#opinionesClientes {
+    text-align: center;
+
+    img {
+        @include border-radius(100%);
+        border: 1px solid $colorBase;
+
+        &:hover {
+            animation: pulse;
+            animation-duration: 2s;
+
+        }
+    }
+
+    p {
+        padding: 10px 20px;
+        font-style: italic;
+
+    }
+
+    .nombreCliente {
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
+#servicios {
+   background-color: rgb(223, 223, 223);
+    padding: 50px;
+    text-align: center;
+
+    img {
+        width: 80px;
+    }
+
+    h5 {
+        font-size: 16px;
+    }
+}

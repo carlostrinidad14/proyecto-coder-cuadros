@@ -1,0 +1,24 @@
+#quienesSomos {
+    padding: 50px;
+
+    img {
+        margin-bottom: 30px;
+        width: 100%;
+
+    }
+
+    p {
+        line-height: 40px;
+        text-align: justify;
+    }
+
+    .accordion-button:not(.collapsed) {
+        color: #fff !important;
+        background-color: #222 !important;
+    }
+
+    .accordion-button:focus {
+        border-color: #444 !important;
+        box-shadow: 0 0 0 0.25rem rgba(88, 88, 88, 0.25) !important;
+    }
+}

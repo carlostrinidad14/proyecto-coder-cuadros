@@ -1,0 +1,18 @@
+.tiendaContenido {
+    .itemTienda {
+        text-align: center;
+        width: 24%;
+        a {
+            color: $colorBase;
+        }
+    }
+
+    .itemTienda img {
+        width: 100%;
+    }
+    div {
+        width: 260px;
+        text-align: center;
+        padding-top: 20px;
+    }
+}

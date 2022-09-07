@@ -1,0 +1,83 @@
+/* Grid General */
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "header"
+        "slider"
+        "coleccionesPrincipales"
+        "artistasNacionales"
+        "masVendidos"
+        "opinionesClientes"
+        "servicios"
+        "footer";
+
+}
+
+.header {
+    grid-area: header;
+}
+
+.slider {
+    grid-area: slider;
+}
+
+.coleccionesPrincipales {
+    grid-area: coleccionesPrincipales;
+    text-align: center;
+}
+
+.artistasNacionales {
+    grid-area: artistasNacionales;
+}
+
+.masVendidos {
+    grid-area: masVendidos;
+    text-align: center;
+}
+
+.opinionesClientes {
+    grid-area: opinionesClientes;
+}
+
+.servicios {
+    grid-area: servicios;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* Grid Tienda */
+.wrapperTienda {
+    display: grid;
+    grid-template-columns: 0.3fr 1.7fr;
+    grid-template-rows: 0.3fr 2.4fr 0.3fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "headerTienda headerTienda"
+        "filtros tiendaContenido"
+        "footerTienda footerTienda";
+}
+
+.headerTienda {
+    grid-area: headerTienda;
+}
+
+.filtros {
+    grid-area: filtros;
+    text-align: center;
+    padding: 10px;
+}
+
+.tiendaContenido {
+    grid-area: tiendaContenido;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footerTienda {
+    grid-area: footerTienda;
+}

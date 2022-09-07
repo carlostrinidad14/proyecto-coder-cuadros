@@ -1,0 +1,68 @@
+footer {
+    margin-top: 30px;
+    background: rgb(180, 180, 180);
+    background: linear-gradient(0deg, rgba(180, 180, 180, 1) 0%, rgba(255, 255, 255, 1) 40%);
+
+    nav ul {
+
+        padding: 5px 0px;
+
+        li {
+            display: inline-block;
+            margin: 0 10px;
+
+            a {
+                color: $colorBase;
+
+                &:hover {
+                    color: $colorBase;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    input {
+        border: none;
+    }
+
+    .noInline li {
+        display: block;
+        border: none;
+    }
+
+    .preFooter {
+
+        padding: 10px;
+        line-height: 25px;
+
+        h5 {
+            font-size: 23px;
+        }
+    }
+
+    #contactoFooter {
+        width: 200px;
+
+    }
+
+    #servicioFooter {
+        width: 600px;
+    }
+
+    #newsletterFooter {
+        width: 350px;
+    }
+
+
+    #footerCopy {
+        text-align: center;
+        padding: 10px;
+    }
+
+    #footerRedes a {
+        color: #222;
+        padding: 2px;
+        text-decoration: underline;
+    }
+}
