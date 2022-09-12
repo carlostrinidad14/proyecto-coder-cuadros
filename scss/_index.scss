@@ -37,17 +37,19 @@ main {
 
 #sliderHome {
     margin-top: 0px;
- h2{
-    @extend .headings;
-    background-color: rgba(223, 223, 223, 0.7);
-    padding: 15px 15px 0px 15px;
-    margin-bottom: 0px;
- }
- p{
-    color: $colorBase;
-    background-color: rgba(223, 223, 223, 0.7);
-    padding: 15px;
- }
+
+    h2 {
+        @extend .headings;
+        background-color: rgba(223, 223, 223, 0.7);
+        padding: 15px 15px 0px 15px;
+        margin-bottom: 0px;
+    }
+
+    p {
+        color: $colorBase;
+        background-color: rgba(223, 223, 223, 0.7);
+        padding: 15px;
+    }
 }
 
 #coleccionesPrincipales {
@@ -70,9 +72,10 @@ main {
             background-color: $colorDestacado;
             border: #fff solid 1px;
             text-decoration: none;
+
             &:nth-of-type(1) {
                 @include background-transition($colorDestacado, $colorBase);
-              }
+            }
         }
 
     }
@@ -85,21 +88,19 @@ main {
     }
 
     #catPpal1 {
-        background-image: url("../images/abstractCat.png");
-        color: #fff;
+        background-image: url("../images/absCat.png");
         background-repeat: no-repeat;
         background-size: cover;
     }
 
     #catPpal2 {
-        background-image: url("../images/botanicaCat.png");
+        background-image: url("../images/botanicoCat.png");
         background-repeat: no-repeat;
         background-size: cover;
     }
 
     #catPpal3 {
-        background-image: url("../images/robotCat.png");
-        color: $colorDestacado;
+        background-image: url("../images/infCat.png");
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -107,11 +108,12 @@ main {
 
 #artistasNacionales {
     height: 380px;
-    background-image: url("../images/artistasNacionales.png");
+    background-image: url("../images/artistasNacionales2.png");
     padding: 50px;
     margin-top: 15px;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center right;
 
     h3 {
         margin-top: 30px;
@@ -140,7 +142,7 @@ main {
 
         &:nth-of-type(1) {
             @include background-transition($colorDestacado, $colorBase);
-          }
+        }
 
         a {
             color: #fff;
@@ -161,7 +163,7 @@ main {
         &:hover {
             animation: jello;
             animation-duration: 2s;
-            
+
         }
     }
 
@@ -169,7 +171,7 @@ main {
         color: $colorBase;
         text-align: center;
         justify-content: center;
-       
+
     }
 
     .prodTit {
@@ -218,7 +220,7 @@ main {
 }
 
 #servicios {
-   background-color: rgb(223, 223, 223);
+    background-color: rgb(223, 223, 223);
     padding: 50px;
     text-align: center;
 

@@ -2,6 +2,7 @@
     .itemTienda {
         text-align: center;
         width: 24%;
+
         a {
             color: $colorBase;
         }
@@ -10,9 +11,21 @@
     .itemTienda img {
         width: 100%;
     }
+
     div {
         width: 260px;
         text-align: center;
         padding-top: 20px;
+    }
+
+
+}
+
+.filtros {
+    padding: 15px;
+
+    h6 {
+        padding: 30px 0 10px 0;
+
     }
 }

@@ -60,9 +60,14 @@ footer {
         padding: 10px;
     }
 
-    #footerRedes a {
-        color: #222;
-        padding: 2px;
-        text-decoration: underline;
+    #footerRedes {
+        padding-right: 20px;
+
+        a {
+            color: #222;
+            padding: 2px;
+            text-decoration: underline;
+            font-size: 32px;
+        }
     }
 }

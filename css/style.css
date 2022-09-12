@@ -173,29 +173,28 @@ main {
   text-align: left; }
 
 #coleccionesPrincipales #catPpal1 {
-  background-image: url("../images/abstractCat.png");
-  color: #fff;
+  background-image: url("../images/absCat.png");
   background-repeat: no-repeat;
   background-size: cover; }
 
 #coleccionesPrincipales #catPpal2 {
-  background-image: url("../images/botanicaCat.png");
+  background-image: url("../images/botanicoCat.png");
   background-repeat: no-repeat;
   background-size: cover; }
 
 #coleccionesPrincipales #catPpal3 {
-  background-image: url("../images/robotCat.png");
-  color: #BEA684;
+  background-image: url("../images/infCat.png");
   background-repeat: no-repeat;
   background-size: cover; }
 
 #artistasNacionales {
   height: 380px;
-  background-image: url("../images/artistasNacionales.png");
+  background-image: url("../images/artistasNacionales2.png");
   padding: 50px;
   margin-top: 15px;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  background-position: center right; }
   #artistasNacionales h3 {
     margin-top: 30px;
     font-size: 42px;
@@ -294,12 +293,21 @@ main {
   text-align: center;
   padding-top: 20px; }
 
+.filtros {
+  padding: 15px; }
+  .filtros h6 {
+    padding: 30px 0 10px 0; }
+
 #infoProducto {
   padding: 0 30px;
   line-height: 40px; }
   #infoProducto input {
     margin-top: 15px;
-    padding: 10px; }
+    padding: 10px;
+    transition: 0.3s; }
+    #infoProducto input:hover {
+      background-color: #BEA684;
+      color: #FFF; }
   #infoProducto .precio {
     color: #BEA684; }
   #infoProducto .categorias {
@@ -308,6 +316,13 @@ main {
   #infoProducto .descProducto {
     text-align: justify;
     line-height: 20px; }
+  #infoProducto .fravorito {
+    color: #222;
+    transition: 0.3s;
+    cursor: pointer;
+    font-size: 20px; }
+    #infoProducto .fravorito:hover {
+      color: #DB4437; }
 
 #quienesSomos {
   padding: 50px; }
@@ -372,10 +387,13 @@ footer {
   footer #footerCopy {
     text-align: center;
     padding: 10px; }
-  footer #footerRedes a {
-    color: #222;
-    padding: 2px;
-    text-decoration: underline; }
+  footer #footerRedes {
+    padding-right: 20px; }
+    footer #footerRedes a {
+      color: #222;
+      padding: 2px;
+      text-decoration: underline;
+      font-size: 32px; }
 
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
