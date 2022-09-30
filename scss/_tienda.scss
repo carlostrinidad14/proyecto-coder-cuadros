@@ -1,31 +1,102 @@
 .tiendaContenido {
-    .itemTienda {
-        text-align: center;
-        width: 24%;
 
-        a {
-            color: $colorBase;
-        }
-    }
-
-    .itemTienda img {
+    img {
         width: 100%;
     }
 
     div {
-        width: 260px;
+        width: 320px;
         text-align: center;
-        padding-top: 20px;
     }
 
+    a {
+        color: $colorBase;
+        text-decoration: none;
+        font-weight: 500;
 
+        &:hover {
+            color: $colorDestacado;
+        }
+    }
+
+    p {
+        padding: 0;
+    }
+
+    .prodTit {
+        color: $colorBase;
+        font-weight: 500;
+        display: block;
+        font-size: 21px;
+    }
+
+    .prodPrice {
+
+        padding: 15px 30px;
+        color: $colorDestacado;
+        font-weight: 800;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+    #paginado{
+        width: 100%;
+    }
+    .pagination{
+        justify-content: center;
+    }
 }
 
 .filtros {
-    padding: 15px;
+    padding: 25px;
 
     h6 {
         padding: 30px 0 10px 0;
 
+    }
+    .form-check-input:checked{
+        background-color: $colorDestacado !important;
+        border-color: $colorBase !important;
+    }
+}
+
+.imgHoverIcon {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+
+    &:hover .overlay {
+
+        opacity: 1;
+
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .3s ease;
+        background-color: $colorDestacado ;
+    }
+
+    .iconImg {
+        color: white;
+        font-size: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .fa-arrow-up-right-from-square:hover {
+        color: #eee;
     }
 }

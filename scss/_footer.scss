@@ -1,7 +1,8 @@
 footer {
-    margin-top: 30px;
-    background: rgb(180, 180, 180);
-    background: linear-gradient(0deg, rgba(180, 180, 180, 1) 0%, rgba(255, 255, 255, 1) 40%);
+    background: rgb(252, 252, 252);
+    background: linear-gradient(180deg, rgb(255, 255, 255) 50%, rgb(235, 235, 235) 100%);
+    margin-top: 50px;
+
 
     nav ul {
 
@@ -24,6 +25,16 @@ footer {
 
     input {
         border: none;
+        padding: 3px;
+
+        &[type=text] {
+            background-color: #fefefe;
+        }
+
+        &[type=submit] {
+            color: #fff;
+            @include background-transition($colorDestacado, $colorBase);
+        }
     }
 
     .noInline li {
@@ -47,7 +58,7 @@ footer {
     }
 
     #servicioFooter {
-        width: 600px;
+        width: 400px;
     }
 
     #newsletterFooter {

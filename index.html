@@ -46,6 +46,7 @@
                             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Buscar</button>
                         </form>
+                        <i class="fa-solid fa-cart-shopping"></i>
                     </div>
                 </div>
             </nav>
@@ -67,21 +68,21 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="images/slide1V2.jpg" class="d-block w-100" alt="Slide 1">
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-md-block">
                             <h2>Más de 8000 Artes</h2>
                             <p>Contamos con mas de 8000 artes listas, en varias categorías, consultanos!</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="images/slide2.jpg" class="d-block w-100" alt="Slide 2">
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-md-block">
                             <h2>Amplia Variedad de Marcos</h2>
                             <p>Más de 32 colores y tonos de madera</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="images/slide3.jpg" class="d-block w-100" alt="Slide 3">
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-md-block">
                             <h2>Decorá tus Espacios</h2>
                             <p>Amplia varieda de tamaños, para que puedas decorar todos tus espacios</p>
                         </div>
@@ -121,35 +122,47 @@
         <!-- Seccion artistas nacionales -->
         <section id="artistasNacionales" class="artistasNacionales">
             <h3>Artistas Nacionales</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <div><a href="#">Boton</a></div>
+            <p>Una seleccion de los mejores Artistas Nacionales</p>
+            <div><a href="#">Ver más</a></div>
         </section>
         <!-- Seccion mas vendidos -->
         <section id="masVendidos" class="masVendidos">
             <h2>Mas Vendidos</h2>
             <div class="flexH">
                 <div>
-                    <a href="./pages/producto.html"><img src="./images/parisBarcelonaLondres.jpg"
-                            alt="Cuadro con ciudades"></a>
-                    <p><a href="./pages/producto.html" class="prodTit">Seis Ciudades</a></p>
-                    <div><a href="./pages/producto.html" class="prodPrice">$1500</a></div>
+                    <div class="imgHoverIcon"> <img src="./images/abstract.jpg" alt="Cuadro abstracto">
+                        <div class="overlay"><a href="./pages/producto.html" class="iconImg"> <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <p><a href="./pages/producto.html" class="prodTit">Asbtracto N°13</a></p>
+                    <div><a href="./pages/producto.html" class="prodPrice">$1480</a></div>
                 </div>
                 <div>
-                    <a href="./pages/producto.html"><img src="./images/cuadroAbs.jpg"
-                            alt="Cuadro con imagen abstracta"></a>
-                    <p><a href="./pages/producto.html" class="prodTit">Abstracto Azul</a></p>
-                    <div><a href="./pages/producto.html" class="prodPrice">$1500</a></div>
+                    <div class="imgHoverIcon"> <img src="./images/frida.jpg" alt="Cuadro Dibujo Frida">
+                        <div class="overlay"><a href="./pages/producto.html" class="iconImg"> <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <p><a href="./pages/producto.html" class="prodTit">Cuadro Frida</a></p>
+                    <div><a href="./pages/producto.html" class="prodPrice">$1470</a></div>
                 </div>
                 <div>
-                    <a href="./pages/producto.html"><img src="./images/cuadroFrida.jpg"
-                            alt="Cuadro con imagen de Frida Khalo "></a>
-                    <p><a href="./pages/producto.html" class="prodTit">Dibujo Frida</a></p>
-                    <div><a href="./pages/producto.html" class="prodPrice">$1500</a></div>
+                    <div class="imgHoverIcon"> <img src="./images/ciudades.jpg" alt="Cuadro con nombre de ciudades">
+                        <div class="overlay"><a href="./pages/producto.html" class="iconImg"> <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <p><a href="./pages/producto.html" class="prodTit">Cuadro Ciudades</a></p>
+                    <div><a href="./pages/producto.html" class="prodPrice">$1540</a></div>
                 </div>
                 <div>
-                    <a href="./pages/producto.html"><img src="./images/cuadrosHoja.jpg"
-                            alt="Cuadro con hojas verdes"></a>
-                    <p><a href="./pages/producto.html" class="prodTit">Hojas Verdes</a></p>
+                    <div class="imgHoverIcon"> <img src="./images/hojas.jpg" alt="Cuadro con hojas verdes">
+                        <div class="overlay"><a href="./pages/producto.html" class="iconImg"> <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <p><a href="./pages/producto.html" class="prodTit">Cuadro botanicos N°3</a></p>
                     <div><a href="./pages/producto.html" class="prodPrice">$1500</a></div>
                 </div>
             </div>
@@ -161,41 +174,22 @@
                 <div>
                     <img src="./images/julioIglesias.png" alt="Julio Iglesias">
                     <p class="nombreCliente">Julio Iglesias</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, magni. Natus asperiores
-                        itaque
-                        porro
-                        nihil, sit sunt dolore vitae corporis, placeat architecto quod necessitatibus id, reiciendis
-                        cumque
-                        in quas quasi!
-                        Est in pariatur illo harum quasi voluptate maxime, at officiis, earum, obcaecati
-                        perspiciatis
-                        architecto dolorum.</p>
+                    <p>Servicio muy eficiente, embalaje muy bueno y muy bien protegido. El cuadro de muy buena calidad y
+                        muy bonito. Totalmente recomendable.</p>
                 </div>
                 <div>
                     <img src="./images/ricardoFort.png" alt="Ricardo Fort">
                     <p class="nombreCliente">Ricardo Fort</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, magni. Natus asperiores
-                        itaque
-                        porro
-                        nihil, sit sunt dolore vitae corporis, placeat architecto quod necessitatibus id, reiciendis
-                        cumque
-                        in quas quasi!
-                        Est in pariatur illo harum quasi voluptate maxime, at officiis, earum, obcaecati
-                        perspiciatis
-                        architecto dolorum.</p>
+                    <p>La compra online ha sido fácil y rápida.
+                        Servicio de atención al cliente impecable y amable.
+                        Producto recibido según la previsión estimada.</p>
                 </div>
                 <div>
                     <img src="./images/reinaIsabel.png" alt="Reina Isabel">
                     <p class="nombreCliente">Reina Isabel</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, magni. Natus asperiores
-                        itaque
-                        porro
-                        nihil, sit sunt dolore vitae corporis, placeat architecto quod necessitatibus id, reiciendis
-                        cumque
-                        in quas quasi!
-                        Est in pariatur illo harum quasi voluptate maxime, at officiis, earum, obcaecati
-                        perspiciatis
-                        architecto dolorum.</p>
+                    <p>Me ha gustado mucho la atención al cliente antes de comprar. Resolvió y me ayudó para saber
+                        exactamente lo que comprar y como hacerlo para no tener errores a la hora de escoger el producto
+                        que quería y como lo quería. Entrega buena. Trabajáis muy bien.</p>
                 </div>
             </div>
         </section>
@@ -205,29 +199,25 @@
                 <div>
                     <img src="./images/deliveryBike.png" alt="delivery Bike">
                     <h5>Envios a todo el país</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, magni. Natus asperiores
-                        itaque
+                    <p>Envíos gratis a partir de $3500.
                     </p>
                 </div>
                 <div>
                     <img src="./images/addBasket.png" alt="agregar al carro">
                     <h5>Compras seguras</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, magni. Natus asperiores
-                        itaque
+                    <p>Sitio 100% seguro. Pagá en forma segura, utilizamos tecnología SSL.
                     </p>
                 </div>
                 <div>
                     <img src="./images/cajaDevolucion.png" alt="caja de devolucion">
                     <h5>Garantía de devolución</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, magni. Natus asperiores
-                        itaque
+                    <p>Si no estás conforme con el producto, te devolvemos tu dinero!
                     </p>
                 </div>
                 <div>
                     <img src="./images/money.png" alt="pagos">
                     <h5>Métodos de pago</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, magni. Natus asperiores
-                        itaque
+                    <p>Pagá hasta en 24 cuotas sin intereses con MERCADOPAGO.
                     </p>
                 </div>
             </div>
@@ -245,6 +235,12 @@
                         73 Doe alėja, Vilnius, Utena, Lithuania
                     </p>
                 </div>
+                <div id="mapaFooter">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d295110.9136079181!2d24.71173125553868!3d54.69987548851205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd93fb5c6408f5%3A0x400d18c70e9dc40!2sVilna%2C%20Lituania!5e0!3m2!1ses-419!2suy!4v1658458762956!5m2!1ses-419!2suy"
+                        width="200" height="180" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
                 <nav id="servicioFooter">
                     <h5>Servicio al Cliente</h5>
                     <ul class="noInline">
@@ -255,12 +251,10 @@
                 </nav>
                 <div id="newsletterFooter">
                     <h5>Newsletter</h5>
+                    <p>Suscribite a nuestro Newsletter para recibir todas nuestras ofertas!</p>
                     <form action="#" method="post"><input type="text" placeholder="Suscribirse"><input type="submit"
                             placeholder="Enviar"></form> <br>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d295110.9136079181!2d24.71173125553868!3d54.69987548851205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd93fb5c6408f5%3A0x400d18c70e9dc40!2sVilna%2C%20Lituania!5e0!3m2!1ses-419!2suy!4v1658458762956!5m2!1ses-419!2suy"
-                        width="200" height="180" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
                 </div>
             </div>
             <nav id="footerNav">

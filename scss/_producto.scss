@@ -1,26 +1,37 @@
 #infoProducto {
     padding: 0 30px;
-    line-height: 40px;
+    line-height: 30px;
+    margin-bottom: 50px;
 
     input {
         margin-top: 15px;
-        padding: 10px;
+        padding: 0 10px;
         transition: 0.3s;
-
-        &:hover {
-            background-color: $colorDestacado;
-            color: #FFF;
+        border: 1px solid $colorBase;
+        &[type=text] {
+            background-color: #fefefe;
         }
+
+        &[type=submit] {
+            color: #fff;
+            @include background-transition($colorDestacado, $colorBase);
+        }
+
+       
     }
 
 
     .precio {
         color: $colorDestacado;
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 0px;
     }
 
     .categorias {
         font-size: 13px;
         font-style: italic;
+        margin-bottom: 0px;
     }
 
     .descProducto {
@@ -37,5 +48,18 @@
         &:hover {
             color: #DB4437;
         }
+    }
+}
+
+.tamaniosInfoProd {
+    display: flex;
+    margin-top: 0;
+
+    #tamaniosProd {
+        width: 50%;
+    }
+
+    #infoProd {
+        width: 50%;
     }
 }

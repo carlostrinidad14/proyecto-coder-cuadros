@@ -19,6 +19,7 @@ header {
 
             &:hover {
                 background-color: $colorBase;
+
             }
 
             &:hover>a {
@@ -27,6 +28,7 @@ header {
 
             a {
                 color: $colorBase;
+                text-decoration: none;
 
             }
         }
@@ -43,5 +45,16 @@ header {
     input {
         border: none;
 
+    }
+
+    .fa-cart-shopping {
+        padding: 0 25px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 0.25s;
+
+        &:hover {
+            color: $colorDestacado;
+        }
     }
 }

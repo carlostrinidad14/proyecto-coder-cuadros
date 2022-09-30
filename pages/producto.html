@@ -46,6 +46,7 @@
                             <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Buscar</button>
                         </form>
+                        <i class="fa-solid fa-cart-shopping"></i>
                     </div>
                 </div>
             </nav>
@@ -57,24 +58,51 @@
 
         <!-- Detalle de producto -->
         <section class="flexH">
-            <div><img src="../images/parisBarcelonaLondres.jpg" alt="Cuadro con ciudades" height="400"></div>
+            <div><img src="../images/ciudades.jpg" alt="Cuadro con ciudades" height="400"></div>
             <div id="infoProducto">
                 <h2>Cuadro con ciudades </h2>
                 <p class="precio">U$S 1989</p>
                 <p class="categorias">Cuadro, Marco negro, Ciudades</p>
-                <p class="descProducto">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-                    voluptas natus, molestiae
-                    neque
-                    in
-                    architecto! Nobis dignissimos neque in eius eveniet impedit unde illo quia aliquam fugiat?
-                    Dicta,
-                    rerum
-                    ut.</p>
+
+                <p class="descProducto">Cuadro con nombres de ciudades a eleccion.
+                </p>
+                <section class="tamaniosInfoProd">
+                    <div id="tamaniosProd">
+                        <h5>Tamaños Disponibles</h5>
+                        <ul>
+                            <li>
+                                22x32 cm.
+                            </li>
+                            <li>
+                                32x46 cm.
+                            </li>
+                            <li>
+                                52x72 cm.
+                            </li>
+                            <li>
+                                72x102 cm.
+                            </li>
+                            <li>
+                                102x152 cm.
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="infoProd">
+                        <h5> Información del Producto</h5>
+
+                        <p> Imágenes impresas en papeles y tintas eco-friendly de alta calidad.
+                            Marcos en madera Marupá de 2,4 cm x 1,25 cm.
+                            El vidrio utilizado es PET cristal, liviano e irrompible.
+                            Las medidas corresponden a lámina + marco.
+                            Tiempo de fabricación estimado: 3 días hábiles.</p>
+                    </div>
+                </section>
                 <p>Agregar a Favoritos <i class="fa-solid fa-heart fravorito"></i></p>
                 <input type="text" placeholder="Cantidad">
-                <input type="button" value="Agregar al Carrito" class="btnEnviar">
+                <input type="submit" value="Agregar al Carrito" class="btnEnviar">
             </div>
         </section>
+
 
 
         <footer class="footer">
@@ -88,6 +116,12 @@
                         73 Doe alėja, Vilnius, Utena, Lithuania
                     </p>
                 </div>
+                <div id="mapaFooter">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d295110.9136079181!2d24.71173125553868!3d54.69987548851205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd93fb5c6408f5%3A0x400d18c70e9dc40!2sVilna%2C%20Lituania!5e0!3m2!1ses-419!2suy!4v1658458762956!5m2!1ses-419!2suy"
+                        width="200" height="180" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
                 <nav id="servicioFooter">
                     <h5>Servicio al Cliente</h5>
                     <ul class="noInline">
@@ -98,20 +132,18 @@
                 </nav>
                 <div id="newsletterFooter">
                     <h5>Newsletter</h5>
+                    <p>Suscribite a nuestro Newsletter para recibir todas nuestras ofertas!</p>
                     <form action="#" method="post"><input type="text" placeholder="Suscribirse"><input type="submit"
                             placeholder="Enviar"></form> <br>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d295110.9136079181!2d24.71173125553868!3d54.69987548851205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd93fb5c6408f5%3A0x400d18c70e9dc40!2sVilna%2C%20Lituania!5e0!3m2!1ses-419!2suy!4v1658458762956!5m2!1ses-419!2suy"
-                        width="200" height="180" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
                 </div>
             </div>
             <nav id="footerNav">
                 <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="../pages/tienda.html">Tienda</a></li>
-                    <li><a href="../pages/quienes-somos.html">Quienes Somos</a></li>
-                    <li><a href="../pages/contacto.html">Contacto</a></li>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./pages/tienda.html">Tienda</a></li>
+                    <li><a href="./pages/quienes-somos.html">Quienes Somos</a></li>
+                    <li><a href="./pages/contacto.html">Contacto</a></li>
                 </ul>
             </nav>
             <div class="flexH">

@@ -1,7 +1,7 @@
 /* Grid General */
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-template-areas:
@@ -53,8 +53,8 @@
 /* Grid Tienda */
 .wrapperTienda {
     display: grid;
-    grid-template-columns: 0.3fr 1.7fr;
-    grid-template-rows: 0.3fr 2.4fr 0.3fr;
+    grid-template-columns: 0.35fr 1.65fr;
+    grid-template-rows: 0.1fr 2.8fr 0.1fr;
     gap: 0px 0px;
     grid-template-areas:
         "headerTienda headerTienda"
@@ -69,13 +69,14 @@
 .filtros {
     grid-area: filtros;
     text-align: center;
-    padding: 10px;
+    padding: 25px;
 }
 
 .tiendaContenido {
     grid-area: tiendaContenido;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .footerTienda {

@@ -15,6 +15,8 @@
         width: 80%;
     }
 
+
+
     header {
         text-align: center;
         height: auto;
@@ -28,6 +30,7 @@
                 margin: 10px 2px;
             }
         }
+        
     }
 
     #contactoFooter {
@@ -53,6 +56,7 @@
         width: 100%;
     }
 
+   
 }
 
 /* Media Query for low resolution  Tablets, Ipads */
@@ -72,6 +76,8 @@
 
         height: 350px;
         width: 80%;
+        background-size: contain;
+        background-position: center;
     }
 
     header {
@@ -88,7 +94,13 @@
 
             }
         }
+        .fa-cart-shopping {
+            padding: 25px;
+            
+        }
     }
+
+
 
     #contactoFooter {
         width: 100%;
@@ -113,6 +125,23 @@
 
     .itemTienda {
         width: 100%;
+    }
+
+    #sliderHome h2{
+        font-size: 20px;
+    }
+
+    #artistasNacionales h3, #artistasNacionales p{
+       background-color: #fff;
+       
+    }
+
+    #sliderHome p{
+        font-size: 15px;
+        padding-top: 2px;
+    }
+    .filtros{
+        display: none;
     }
 }
 
@@ -140,9 +169,11 @@
         text-align: center;
         height: auto;
         padding: 10px 0 0 0;
+
         nav ul {
             float: none;
             padding: 33px 0px;
+
             li {
                 margin: 10px 2px;
             }
@@ -194,6 +225,8 @@
 
         height: 350px;
         width: 25%;
+        background-size: cover;
+        background-position: center;
     }
 
     #masVendidos img {
