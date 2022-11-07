@@ -225,7 +225,7 @@ alert("Felicitaciones ha comprado un cuadro " + cuadroPersonalizado.orientacion 
 
 
 
-/* //BUSQUEDA EN EL ARRAY DE PRODUCTOS PARA FILTRO POR CATEGORIA
+ //BUSQUEDA EN EL ARRAY DE PRODUCTOS PARA FILTRO POR CATEGORIA
 let categoria = prompt(
   "Ingrese una categoría (Ciudades, Botanicos, Asbtractos o Infantiles) para filtrar por categoría"
 );
@@ -256,4 +256,4 @@ console.log(productoPorPrecio);
 //BUSQUEDA COMBINADA CATEGORIA, COLOR DE MARCO Y RANGO DE PRECIO
 
 let productoCombinado2 = productos.filter((producto) => producto.precio >= precioMenor && producto.precio <= precioMayor && producto.categoria === categoria && producto.colorMarco.includes(colorMarco));
-console.log(productoCombinado2); */
+console.log(productoCombinado2);
