@@ -37,8 +37,12 @@ const finalizarCompra = document.querySelector("#finalizarCompra");
 
 //FUNCIONES
 
-carro = JSON.parse(localStorage.getItem("carro"));
-console.log(carro);
+if (localStorage.getItem("carro") === null) {
+  //...
+} else {
+  carro = JSON.parse(localStorage.getItem("carro"));
+  console.log(carro);
+}
 
 const toggleCart = () => {
   document.querySelector(".sidecart").classList.toggle("open-cart");
