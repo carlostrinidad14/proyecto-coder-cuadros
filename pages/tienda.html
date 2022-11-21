@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <div class="wrapperTienda">
+    <div class="wrapperTienda" id="wrapperTienda">
         <header class="headerTienda">
 
             <nav class="navbar navbar-expand-lg bg-light ">
@@ -41,10 +41,10 @@
                             <li class="nav-item"><a href="../pages/contacto.html">Contacto</a></li>
 
                         </ul>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Buscar</button>
-                            
+                        <form class="d-flex">
+                            <input class="form-control me-2" placeholder="Buscar" aria-label="Search" id="inputBuscar">
+                            <button class="btn btn-outline-success" type="button" id="btnBuscar">Buscar</button>
+
                         </form>
                         <i class="fa-solid fa-cart-shopping"></i>
                     </div>
@@ -56,61 +56,60 @@
 
 
 
-        <div class="filtros">
+        <div class="filtros" id="filtros">
             <h4>Filtrar</h4>
             <form action="">
                 <!-- Filtro select -->
                 <h6>Categorías</h6>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" aria-label="Default select example" id="selectCategoria">
                     <option selected>Seleccionar Categoría</option>
-                    <option value="1">Abstractos</option>
-                    <option value="2">Artias nacionales</option>
-                    <option value="3">Botanicos</option>
-                    <option value="4">Infantiles</option>
+                    <option value="Abstractos">Abstractos</option>
+                    <option value="Botanicos">Botanicos</option>
+                    <option value="Infantiles">Infantiles</option>
+                    <option value="Ciudades">Ciudades</option>
                 </select>
                 <!-- Filtro radio -->
                 <h6>Color de Marco</h6>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Natural
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        Negro
-                    </label>
-
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        Blanco
-                    </label>
-
-                </div>
-                <!-- Filtros de checkbox -->
-                <h6>Otras Caracteristicas</h6>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Vidrio
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Marialuisa
-                    </label>
-                </div>
+                <select class="form-select" aria-label="Default select example" id="selectColor">
+                    <option selected>Seleccionar Color de Marco</option>
+                    <option value="Natural">Natural</option>
+                    <option value="Negro">Negro</option>
+                    <option value="Blanco">Blanco</option>
+                </select>
 
                 <!-- Filtro Range -->
-                <h6>Rango de precio</h6>
-                <input type="range" class="form-range" id="customRange1">
+                <h6>Precio Maximo</h6>
+                <div class="mt-2">
+
+
+                    <input type="range" class="form-range" min="0" max="6000" value="6000" id="rangoPrecioMax">
+
+                    <div class="d-flex justify-content-between">
+
+                        <small class="text-muted">$0</small>
+                        <small class="text-muted">$6000</small>
+
+                    </div>
+                </div>
+                <h6>Precio Minimo</h6>
+                <div class="mt-2">
+
+
+                    <input type="range" class="form-range" min="0" max="6000" value="0" id="rangoPrecioMin">
+
+                    <div class="d-flex justify-content-between">
+
+                        <small class="text-muted">$0</small>
+                        <small class="text-muted">$6000</small>
+
+                    </div>
+                </div>
+
+
+
             </form>
         </div>
-        <div class="tiendaContenido">
+        <div class="tiendaContenido" id="tiendaContenido">
             <div>
                 <div class="imgHoverIcon"> <img src="../images/hojas.jpg" alt="Cuadro con hojas verdes">
                     <div class="overlay"><a href="../pages/producto.html" class="iconImg"> <i
@@ -119,97 +118,9 @@
                 </div>
                 <p><a href="../pages/producto.html" class="prodTit">Hojas Verdes</a></p>
                 <div><a href="../pages/producto.html" class="prodPrice">$1500</a></div>
+                <button class="agregarCarro">Agregar al carro</button>
             </div>
-            <div>
-                <div class="imgHoverIcon"> <img src="../images/frida.jpg" alt="Cuadro con hojas verdes">
-                    <div class="overlay"><a href="../pages/producto.html" class="iconImg"> <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <p><a href="../pages/producto.html" class="prodTit">Hojas Verdes</a></p>
-                <div><a href="../pages/producto.html" class="prodPrice">$1500</a></div>
-            </div>
-            <div>
-                <div class="imgHoverIcon"> <img src="../images/ciudades.jpg" alt="Cuadro con hojas verdes">
-                    <div class="overlay"><a href="../pages/producto.html" class="iconImg"> <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <p><a href="../pages/producto.html" class="prodTit">Hojas Verdes</a></p>
-                <div><a href="../pages/producto.html" class="prodPrice">$1500</a></div>
-            </div>
-            <div>
-                <div class="imgHoverIcon"> <img src="../images/abstract.jpg" alt="Cuadro con hojas verdes">
-                    <div class="overlay"><a href="../pages/producto.html" class="iconImg"> <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <p><a href="../pages/producto.html" class="prodTit">Hojas Verdes</a></p>
-                <div><a href="../pages/producto.html" class="prodPrice">$1500</a></div>
-            </div>
-            <div>
-                <div class="imgHoverIcon"> <img src="../images/hojas.jpg" alt="Cuadro con hojas verdes">
-                    <div class="overlay"><a href="../pages/producto.html" class="iconImg"> <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <p><a href="../pages/producto.html" class="prodTit">Hojas Verdes</a></p>
-                <div><a href="../pages/producto.html" class="prodPrice">$1500</a></div>
-            </div>
-            <div>
-                <div class="imgHoverIcon"> <img src="../images/ciudades.jpg" alt="Cuadro con hojas verdes">
-                    <div class="overlay"><a href="../pages/producto.html" class="iconImg"> <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <p><a href="../pages/producto.html" class="prodTit">Hojas Verdes</a></p>
-                <div><a href="../pages/producto.html" class="prodPrice">$1500</a></div>
-            </div>
-            <div>
-                <div class="imgHoverIcon"> <img src="../images/frida.jpg" alt="Cuadro con hojas verdes">
-                    <div class="overlay"><a href="../pages/producto.html" class="iconImg"> <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <p><a href="../pages/producto.html" class="prodTit">Hojas Verdes</a></p>
-                <div><a href="../pages/producto.html" class="prodPrice">$1500</a></div>
-            </div>
-            <div>
-                <div class="imgHoverIcon"> <img src="../images/abstract.jpg" alt="Cuadro con hojas verdes">
-                    <div class="overlay"><a href="../pages/producto.html" class="iconImg"> <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <p><a href="../pages/producto.html" class="prodTit">Hojas Verdes</a></p>
-                <div><a href="../pages/producto.html" class="prodPrice">$1500</a></div>
-            </div>
-            <div>
-                <div class="imgHoverIcon"> <img src="../images/frida.jpg" alt="Cuadro con hojas verdes">
-                    <div class="overlay"><a href="../pages/producto.html" class="iconImg"> <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <p><a href="../pages/producto.html" class="prodTit">Hojas Verdes</a></p>
-                <div><a href="../pages/producto.html" class="prodPrice">$1500</a></div>
-            </div>
-            <div>
-                <div class="imgHoverIcon"> <img src="../images/hojas.jpg" alt="Cuadro con hojas verdes">
-                    <div class="overlay"><a href="../pages/producto.html" class="iconImg"> <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <p><a href="../pages/producto.html" class="prodTit">Hojas Verdes</a></p>
-                <div><a href="../pages/producto.html" class="prodPrice">$1500</a></div>
-            </div>
-            <div>
-                <div class="imgHoverIcon"> <img src="../images/ciudades.jpg" alt="Cuadro con hojas verdes">
-                    <div class="overlay"><a href="../pages/producto.html" class="iconImg"> <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <p><a href="../pages/producto.html" class="prodTit">Hojas Verdes</a></p>
-                <div><a href="../pages/producto.html" class="prodPrice">$1500</a></div>
-            </div>
+
             <!-- Paginado
              -->
             <div id="paginado">
@@ -290,11 +201,58 @@
 
         </footer>
     </div>
+
+    <!-- //SIDE CART DIV -->
+    <div class="sidecart bg-dark text-center">
+        <div class="text-light h4 m-0 px-4 text-center">
+            Carrito
+            <div class="d-inline toggleCart"><i class="far text-success float-right fa-arrow-alt-circle-right mt-1"></i>
+            </div>
+        </div>
+        <ul class="nav flex-column ulCarro">
+
+            <li class="nav-link d-flex flex-wrap flex-row">
+                <div class="col-12 text-light h5 text-center p-0">Lorem Productos</div>
+                <div class="col-4 p-0">
+                    <img class="img-fluid"
+                        src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-product-1_large.png?v=1530129292"
+                        alt="">
+                </div>
+                <div class="col-2 bg-primary text-light justify-content-around d-flex flex-column">
+                    <i class="fas fa-plus"></i>
+                    <div class="product-quantity m-0 p-0 h5">2</div>
+                    <i class="fas fa-minus"></i>
+                </div>
+                <div class="sidecart-price pl-0 col-6 bg-primary text-right d-flex flex-wrap text-light">
+                    <div class="text-right text-dark d-flex flex-row justify-content-end align-items-center h6 m-0 p-0">
+                        Remover <span class="h5 ml-2 m-0 p-0 "><b>X</b></span></div>
+                    <div class="product-price">R$ 1200,00</div>
+                    <div class=""><span class="text-dark"><b>Total</b></span> <span class="product-price-total">R$
+                            2400,00</span></div>
+                </div>
+            </li>
+        </ul>
+        <div id="fijoCarro">
+            <div class="text-light h6 text-left mx-3">Total:<span class="text-success"
+                    id="sidecart-total-products">$ </span></div>
+            <div class="text-light h6 text-left mx-3">Envio: <span class="text-success" id="sidecart-frete">$
+                    250</span>
+                (Precio Fijo)</div>
+            <div class="text-light h5 text-left mx-3">Valor Final: <span class="text-success" id="sidecart-total">$
+                    </span></div>
+            
+        </div>
+        <div class="p-2">
+            <button type="button" class="btn btn-success w-100" id="finalizarCompra">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-        <script src="../js/data.js"></script>
-        <script src="../js/script.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 
 </html>

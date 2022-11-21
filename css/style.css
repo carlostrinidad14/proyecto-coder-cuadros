@@ -7,6 +7,47 @@
 body {
   font-family: 'Roboto', sans-serif !important;
   color: #222; }
+  body .sidecart {
+    width: 320px;
+    min-width: 320px;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    overflow: auto !important;
+    right: -320px;
+    z-index: 9000;
+    transition: 0.2s ease; }
+  body .open-cart {
+    right: 0px !important; }
+  body .open-cart:before {
+    content: '';
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    pointer-events: none;
+    background-color: black;
+    opacity: 0.5;
+    z-index: -1; }
+  body .product-quantity {
+    position: relative; }
+  body .product-quantity:after {
+    content: 'x de';
+    white-space: nowrap;
+    position: absolute;
+    z-index: 10;
+    margin-left: 2px; }
+  body .sidecart-price > div {
+    margin: auto;
+    width: 100%;
+    white-space: nowrap; }
+  body .remover {
+    cursor: pointer; }
+  body .swal2-container {
+    z-index: 10000; }
 
 /* Clase para extend de h1,h2 etc */
 .headings, #sliderHome h2 {
@@ -555,7 +596,10 @@ footer {
     text-align: center;
     margin-top: 15px; }
   .itemTienda {
-    width: 100%; } }
+    width: 100%; }
+  .sidecart {
+    width: 100vw;
+    right: -100vw; } }
 
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {

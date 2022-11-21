@@ -1,5 +1,6 @@
+const arrayCuadros =[cuadro1, cuadro2, cuadro3, cuadro4, cuadro5, cuadro6, cuadro7, cuadro8, cuadro9, cuadro10, cuadro11]
 //OBJETO PARA GUARDAR DATOS DE LA PERSONALIZACION DEL USUARIO
-let cuadroPersonalizado = {
+ let cuadroPersonalizado = {
 orientacion:"",
 ancho:0, 
 alto:0,
@@ -229,31 +230,31 @@ alert("Felicitaciones ha comprado un cuadro " + cuadroPersonalizado.orientacion 
 let categoria = prompt(
   "Ingrese una categoría (Ciudades, Botanicos, Asbtractos o Infantiles) para filtrar por categoría"
 );
- let producto = productos.filter((producto) => producto.categoria === categoria);
+ let producto = arrayCuadros.filter((producto) => producto.categoria === categoria);
 
-console.log(producto);
+console.log("Filtro categoria",producto);
 
 //BUSQUEDA POR COLOR DE MARCO
 let colorMarco = prompt(
   "Seleccione color de Marco para ver los cuadros disponibles (Natural, Blanco, Negro)"
 );
-let productoColorMarco = productos.filter((producto) =>
+let productoColorMarco = arrayCuadros.filter((producto) =>
   producto.colorMarco.includes(colorMarco)
 );
-console.log(productoColorMarco); 
+console.log("Filtro color MArco",productoColorMarco); 
 
 //BUSQUEDA POR COLOR DE MARCO DENTRO DE CATEGORÍA
-let productoCombinado = productos.filter((producto) => producto.categoria === categoria && producto.colorMarco.includes(colorMarco));
-console.log(productoCombinado); 
+let productoCombinado = arrayCuadros.filter((producto) => producto.categoria === categoria && producto.colorMarco.includes(colorMarco));
+console.log("filtro categoria y color", productoCombinado); 
 
 //BUSQUEDA RANGO PRECIO
 let precioMenor = prompt("Ingrese precio MENOR para buscar");
 let precioMayor = prompt("Ingrese precio MAYOR para buscar");
-let productoPorPrecio = productos.filter((producto) => producto.precio >= precioMenor && producto.precio <= precioMayor);
-console.log(productoPorPrecio); 
+let productoPorPrecio = arrayCuadros.filter((producto) => producto.precio >= precioMenor && producto.precio <= precioMayor);
+console.log("filtro precio",productoPorPrecio); 
 
 
 //BUSQUEDA COMBINADA CATEGORIA, COLOR DE MARCO Y RANGO DE PRECIO
 
-let productoCombinado2 = productos.filter((producto) => producto.precio >= precioMenor && producto.precio <= precioMayor && producto.categoria === categoria && producto.colorMarco.includes(colorMarco));
-console.log(productoCombinado2);
+let productoCombinado2 = arrayCuadros.filter((producto) => producto.precio >= precioMenor && producto.precio <= precioMayor && producto.categoria === categoria && producto.colorMarco.includes(colorMarco));
+console.log("filtro todo",productoCombinado2);
