@@ -56,13 +56,13 @@ const cargarProductoEnTienda = () => {
     cuadroCreado.setAttribute("data-id", cuadro.id);
     cuadroCreado.innerHTML = `
         <div class="imgHoverIcon"> <img src="../images/${cuadro.img}" alt="${cuadro.titulo}">
-        <div class="overlay">
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        <div class="overlay" data-id="${cuadro.id}">
+        <a href="#" class="iconImg" data-id="${cuadro.id}"><i class="fa-solid fa-arrow-up-right-from-square" data-id="${cuadro.id}"></a></i>
         </div>
         </div>
         <p class="prodTit">${cuadro.titulo}</p>
         <div>$${cuadro.precio}</div>
-        <button class="agregarCarro" data-id="${cuadro.id}">Agregar al carro</button> <button class="verProd" data-id="${cuadro.id}">verProd</button>
+        <button class="agregarCarro" data-id="${cuadro.id}">Agregar al carro</button> <button class="verProd" data-id="${cuadro.id}">Ver Cuadro</button>
         `;
     listadoTienda.prepend(cuadroCreado);
   });
@@ -73,6 +73,15 @@ const cargarProductoEnTienda = () => {
 
   const verProducto = document.querySelectorAll(".verProd");
   verProducto.forEach((button) => {
+    button.addEventListener("click", verProductoSolo);
+  });
+
+  const verProductoOverlay = document.querySelectorAll(".overlay");
+  verProductoOverlay.forEach((button) => {
+    button.addEventListener("click", verProductoSolo);
+  });
+  const verProductoIconImg = document.querySelectorAll(".iconImg");
+  verProductoIconImg.forEach((button) => {
     button.addEventListener("click", verProductoSolo);
   });
 };
@@ -98,9 +107,10 @@ const agregarProductoAlCarro = (e) => {
 
 const verProductoSolo = (e) => {
   const idCuadro = e.target.getAttribute("data-id");
-
+console.log(e)
+console.log(idCuadro)
   localStorage.setItem("idCuadro", idCuadro);
-  window.location.href = "producto.html";
+ window.location.href = "producto.html"; 
 };
 
 //ELIMINO CUADROS QUE ESTAN EN EL CARRO
