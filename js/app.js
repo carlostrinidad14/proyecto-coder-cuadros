@@ -1,22 +1,11 @@
 //DECLARACIONES
 
 //array de productos
-const arrayCuadros = [
-  cuadro1,
-  cuadro2,
-  cuadro3,
-  cuadro4,
-  cuadro5,
-  cuadro6,
-  cuadro7,
-  cuadro8,
-  cuadro9,
-  cuadro10,
-  cuadro11,
-  cuadro12,
-];
+let arrayCuadros = [];
 let carro = [];
 let busqueda = [];
+
+let totalConEnvio = 0;
 
 //QUERY DE ELEMENTOS
 const btnToggler = document.querySelector(".fa-cart-shopping");
@@ -37,13 +26,13 @@ const finalizarCompra = document.querySelector("#finalizarCompra");
 
 //FUNCIONES
 
+//VERIFICO SI HAY LOCAL STORAGE PARA CARGAR CARRO GUARDADO
 if (localStorage.getItem("carro") === null) {
-  //...
 } else {
   carro = JSON.parse(localStorage.getItem("carro"));
-  console.log(carro);
 }
 
+// FUNCIONA ABRIR EL CARRO
 const toggleCart = () => {
   document.querySelector(".sidecart").classList.toggle("open-cart");
 };
@@ -86,6 +75,43 @@ const cargarProductoEnTienda = () => {
   });
 };
 
+// CARGA PRODUCTOS EN TIENDA DESPUES DE FILTRAR
+const cargarProductoBuscadoEnTienda = () => {
+  listadoTienda.innerHTML = "";
+  busqueda.forEach((cuadro) => {
+    const cuadroCreado = document.createElement("div");
+    cuadroCreado.classList.add("cuadroListado");
+    cuadroCreado.setAttribute("data-id", cuadro.id);
+    cuadroCreado.innerHTML = `
+    <div class="imgHoverIcon"> <img src="../images/${cuadro.img}" alt="${cuadro.titulo}">
+    <div class="overlay" data-id="${cuadro.id}">
+    <a href="#" class="iconImg" data-id="${cuadro.id}"><i class="fa-solid fa-arrow-up-right-from-square" data-id="${cuadro.id}"></a></i>
+    </div>
+    </div>
+    <p class="prodTit">${cuadro.titulo}</p>
+    <div>$${cuadro.precio}</div>
+    <button class="agregarCarro" data-id="${cuadro.id}">Agregar al carro</button> <button class="verProd" data-id="${cuadro.id}">Ver Cuadro</button>
+    `;
+    listadoTienda.prepend(cuadroCreado);
+  });
+  const botonCuadro = document.querySelectorAll(".agregarCarro");
+  botonCuadro.forEach((button) => {
+    button.addEventListener("click", agregarProductoAlCarro);
+  });
+  const verProducto = document.querySelectorAll(".verProd");
+  verProducto.forEach((button) => {
+    button.addEventListener("click", verProductoSolo);
+  });
+  const verProductoOverlay = document.querySelectorAll(".overlay");
+  verProductoOverlay.forEach((button) => {
+    button.addEventListener("click", verProductoSolo);
+  });
+  const verProductoIconImg = document.querySelectorAll(".iconImg");
+  verProductoIconImg.forEach((button) => {
+    button.addEventListener("click", verProductoSolo);
+  });
+};
+
 //AGREGO PRODUCTOS AL CARRO
 const agregarProductoAlCarro = (e) => {
   const idCuadro = e.target.getAttribute("data-id");
@@ -105,12 +131,13 @@ const agregarProductoAlCarro = (e) => {
   mostrarCarro();
 };
 
+//FN QUE LLEVA A PAGINA DE PRODUCTO INDIVIDUAL
 const verProductoSolo = (e) => {
   const idCuadro = e.target.getAttribute("data-id");
-console.log(e)
-console.log(idCuadro)
+  console.log(e);
+  console.log(idCuadro);
   localStorage.setItem("idCuadro", idCuadro);
- window.location.href = "producto.html"; 
+  window.location.href = "producto.html";
 };
 
 //ELIMINO CUADROS QUE ESTAN EN EL CARRO
@@ -136,14 +163,14 @@ const mostrarCarro = () => {
     cuadroEnCarro.innerHTML = `
     <div class="col-12 text-light h5 text-center p-0">${cuadro.titulo}</div>
     <div class="col-4 p-0">
-        <img class="img-fluid"
+        <img class="img-fluid imgCarro" data-id="${cuadro.id}"
         src="../images/${cuadro.img}"
-            alt="">
+            alt="${cuadro.titulo}">
     </div>
     <div class="col-2 bg-primary text-light justify-content-around d-flex flex-column">
-        <i class="fas fa-plus"></i>
+        
         <div class="product-quantity m-0 p-0 h5">${cuadro.cantidad}</div>
-        <i class="fas fa-minus"></i>
+        
     </div>
     <div class="sidecart-price pl-0 col-6 bg-primary text-right d-flex flex-wrap text-light">
         <div class="text-right text-dark d-flex flex-row justify-content-end align-items-center h6 m-0 p-0 remover"  data-id="${
@@ -161,35 +188,45 @@ const mostrarCarro = () => {
     ulCarro.append(cuadroEnCarro);
   });
 
+  const verProductoImgCarro = document.querySelectorAll(".imgCarro");
+  verProductoImgCarro.forEach((button) => {
+    button.addEventListener("click", verProductoSolo);
+  });
+
   const removerCuadro = document.querySelectorAll(".remover");
   removerCuadro.forEach((button) => {
     button.addEventListener("click", eliminarCuadroCarro);
   });
 
-  const preciosCuadrosCarro = document.querySelectorAll(".product-price-total");
-  preciosCuadrosCarro.forEach((button) => {
-    let precioInner = Number(button.innerHTML);
+  if (carro.length === 0) {
+    cacularTotal(0);
+  } else {
+    const preciosCuadrosCarro = document.querySelectorAll(
+      ".product-price-total"
+    );
+    preciosCuadrosCarro.forEach((button) => {
+      let precioInner = Number(button.innerHTML);
 
-    precioCuadrosTotal = precioCuadrosTotal + precioInner;
-    cacularTotal(precioCuadrosTotal);
+      precioCuadrosTotal = precioCuadrosTotal + precioInner;
+      cacularTotal(precioCuadrosTotal);
 
-    console.log(finalizarCompra);
-  });
+      /*  console.log(finalizarCompra); */
+    });
+  }
 };
 
 //BUSQUEDA POR TEXTO EN TITULO DE CUADRO
-
 const buscarTitulo = () => {
   arrayCuadros.forEach((cuadro) => {
     let txtBusqueda = inputBuscar.value;
     busqueda = arrayCuadros.filter((cuadro) =>
       cuadro.titulo.includes(txtBusqueda)
     );
-    console.log(busqueda);
   });
 };
 
-const buscarCategoria = () => {
+//FILTROS INDIVIDUALES
+/* const buscarCategoria = () => {
   arrayCuadros.forEach((cuadro) => {
     let catBusqueda = selectCategoria.value;
     busqueda = arrayCuadros.filter(
@@ -218,39 +255,74 @@ const buscarPrecio = () => {
       (producto) => producto.precio >= precioMin && producto.precio <= precioMax
     );
   });
-};
+}; */
 
-const cargarProductoBuscadoEnTienda = () => {
-  listadoTienda.innerHTML = "";
-  busqueda.forEach((cuadro) => {
-    const cuadroCreado = document.createElement("div");
-    cuadroCreado.classList.add("cuadroListado");
-    cuadroCreado.setAttribute("data-id", cuadro.id);
-    cuadroCreado.innerHTML = `
-    <div class="imgHoverIcon"> <img src="../images/${cuadro.img}" alt="${cuadro.titulo}">
-    <div class="overlay">
-    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-    </div>
-    </div>
-    <p class="prodTit">${cuadro.titulo}</p>
-    <div>$${cuadro.precio}</div>
-    <button class="agregarCarro" data-id="${cuadro.id}">Agregar al carro</button> <button class="verProd" data-id="${cuadro.id}">Ver Producto</button>
-    `;
-    listadoTienda.prepend(cuadroCreado);
-  });
-  const botonCuadro = document.querySelectorAll(".agregarCarro");
-  botonCuadro.forEach((button) => {
-    button.addEventListener("click", agregarProductoAlCarro);
-  });
-  const verProducto = document.querySelectorAll(".verProd");
-  verProducto.forEach((button) => {
-    button.addEventListener("click", verProductoSolo);
+// FUNCION PARA BUSCAR CON TODOS LOS FILTRO DE LA TIENDA
+const buscarCompleto = () => {
+  arrayCuadros.forEach((cuadro) => {
+    let catBusqueda = selectCategoria.value;
+    let colorBusqueda = selectColor.value;
+    let precioMax = rangoPrecioMax.value;
+    let precioMin = rangoPrecioMin.value;
+    if (
+      catBusqueda === "Seleccionar Categoría" &&
+      colorBusqueda === "Seleccionar Color de Marco"
+    ) {
+      console.log("sin cat y sin color");
+      console.log(catBusqueda.value);
+      console.log(selectColor.value);
+      busqueda = arrayCuadros.filter(
+        (producto) =>
+          producto.precio >= precioMin && producto.precio <= precioMax
+      );
+    } else if (catBusqueda === "Seleccionar Categoría") {
+      console.log("sin cat y CON color");
+      console.log(catBusqueda.value);
+      console.log(selectColor.value);
+      busqueda = arrayCuadros.filter(
+        (producto) =>
+          producto.precio >= precioMin &&
+          producto.precio <= precioMax &&
+          producto.colorMarco.includes(colorBusqueda)
+      );
+    } else if (colorBusqueda === "Seleccionar Color de Marco") {
+      console.log("CON cat y sin color");
+      console.log(catBusqueda.value);
+      console.log(selectColor.value);
+      busqueda = arrayCuadros.filter(
+        (producto) =>
+          producto.precio >= precioMin &&
+          producto.precio <= precioMax &&
+          producto.categoria === catBusqueda
+      );
+    } else {
+      console.log("con cat y con color");
+      console.log(catBusqueda.value);
+      console.log(selectColor.value);
+      busqueda = arrayCuadros.filter(
+        (producto) =>
+          producto.precio >= precioMin &&
+          producto.precio <= precioMax &&
+          producto.categoria === catBusqueda &&
+          producto.colorMarco.includes(colorBusqueda)
+      );
+    }
   });
 };
 
 const cacularTotal = (precioCuadrosTotal) => {
-  totalConEnvio = precioCuadrosTotal + 250;
-  fijoCarro.innerHTML = ` <div class="text-light h6 text-left mx-3">Total: <span class="text-success"
+  if (carro.length === 0) {
+    fijoCarro.innerHTML = ` <div class="text-light h6 text-left mx-3">Total: <span class="text-success"
+  id="sidecart-total-products">$ 0</span></div>
+<div class="text-light h6 text-left mx-3">Envio: <span class="text-success" id="sidecart-flete">$
+  250</span>
+(Precio Fijo)</div>
+<div class="text-light h5 text-left mx-3">Valor Final: <span class="text-success" id="sidecart-total">
+  $ 0</span></div>
+`;
+  } else {
+    totalConEnvio = precioCuadrosTotal + 250;
+    fijoCarro.innerHTML = ` <div class="text-light h6 text-left mx-3">Total: <span class="text-success"
   id="sidecart-total-products">$ ${precioCuadrosTotal}</span></div>
 <div class="text-light h6 text-left mx-3">Envio: <span class="text-success" id="sidecart-flete">$
   250</span>
@@ -258,6 +330,7 @@ const cacularTotal = (precioCuadrosTotal) => {
 <div class="text-light h5 text-left mx-3">Valor Final: <span class="text-success" id="sidecart-total">
   $${precioCuadrosTotal + 250}</span></div>
 `;
+  }
 
   return totalConEnvio;
 };
@@ -280,7 +353,7 @@ const cargoProductoSolo = () => {
             <p class="precio">$${cuadro.precio}</p>
             <p class="categorias">${cuadro.colorMarco}</p>
 
-            <p class="descProducto">Cuadro con nombres de ciudades a eleccion.
+            <p class="descProducto">${cuadro.descripcion}
             </p>
             <section class="tamaniosInfoProd">
                 <div id="tamaniosProd">
@@ -306,11 +379,9 @@ const cargoProductoSolo = () => {
                 <div id="infoProd">
                     <h5> Información del Producto</h5>
 
-                    <p> ${cuadro.descripcion}</p>
+                    <p> </p>
                 </div>
             </section>
-            <p>Agregar a Favoritos <i class="fa-solid fa-heart fravorito"></i></p>
-            <input type="text" placeholder="Cantidad">
             <button class="agregarCarro" data-id="${cuadro.id}">Agregar al carro</button>
         </div>
           `;
@@ -326,11 +397,19 @@ const cargoProductoSolo = () => {
 //Finalizar Compra
 
 const finalizaCompra = () => {
-  Swal.fire(
-    "Compra realizada correctamente",
-    "Total de la compra: " + totalConEnvio,
-    "success"
-  );
+  if (carro.length === 0) {
+    Swal.fire(
+      "El carro está vacío",
+      "Te Invitamos a visitar nuestra tienda y elegir algunos productos",
+      "error"
+    );
+  } else {
+    Swal.fire(
+      "Compra realizada correctamente",
+      "Total de la compra: " + totalConEnvio,
+      "success"
+    );
+  }
 };
 
 //EVENTLISTENERS
@@ -342,22 +421,32 @@ btnBuscar.addEventListener("click", cargarProductoBuscadoEnTienda);
 inputBuscar.addEventListener("keypress", buscarTitulo);
 inputBuscar.addEventListener("keypress", cargarProductoBuscadoEnTienda);
 if (filtros) {
-  selectCategoria.addEventListener("change", buscarCategoria);
+  /* selectCategoria.addEventListener("change", buscarCategoria); */
+  selectCategoria.addEventListener("change", buscarCompleto);
   selectCategoria.addEventListener("change", cargarProductoBuscadoEnTienda);
-  selectColor.addEventListener("change", buscarColor);
+  /* selectColor.addEventListener("change", buscarColor); */
+  selectColor.addEventListener("change", buscarCompleto);
   selectColor.addEventListener("change", cargarProductoBuscadoEnTienda);
-  rangoPrecioMax.addEventListener("change", buscarPrecio);
+  /*  rangoPrecioMax.addEventListener("change", buscarPrecio); */
+  rangoPrecioMax.addEventListener("change", buscarCompleto);
   rangoPrecioMax.addEventListener("change", cargarProductoBuscadoEnTienda);
-  rangoPrecioMin.addEventListener("change", buscarPrecio);
+  /* rangoPrecioMin.addEventListener("change", buscarPrecio); */
+  rangoPrecioMin.addEventListener("change", buscarCompleto);
   rangoPrecioMin.addEventListener("change", cargarProductoBuscadoEnTienda);
 }
 
-if (wrapperTienda) {
-  cargarProductoEnTienda();
-}
-mostrarCarro();
-if (productoSolo) {
-  cargoProductoSolo();
-}
+fetch("../json/data.json")
+  .then((response) => response.json())
+  .then((data) => {
+    arrayCuadros = data;
+
+    if (wrapperTienda) {
+      cargarProductoEnTienda();
+    }
+    mostrarCarro();
+    if (productoSolo) {
+      cargoProductoSolo();
+    }
+  });
 
 finalizarCompra.addEventListener("click", finalizaCompra);
