@@ -78,11 +78,14 @@ const cargarProductoEnTienda = () => {
 // CARGA PRODUCTOS EN TIENDA DESPUES DE FILTRAR
 const cargarProductoBuscadoEnTienda = () => {
   listadoTienda.innerHTML = "";
-  busqueda.forEach((cuadro) => {
-    const cuadroCreado = document.createElement("div");
-    cuadroCreado.classList.add("cuadroListado");
-    cuadroCreado.setAttribute("data-id", cuadro.id);
-    cuadroCreado.innerHTML = `
+  if (busqueda.length === 0) {
+    listadoTienda.innerHTML = "<h3>No existen cuadros con estos criterios de busqueda</h3>";
+  } else {
+    busqueda.forEach((cuadro) => {
+      const cuadroCreado = document.createElement("div");
+      cuadroCreado.classList.add("cuadroListado");
+      cuadroCreado.setAttribute("data-id", cuadro.id);
+      cuadroCreado.innerHTML = `
     <div class="imgHoverIcon"> <img src="../images/${cuadro.img}" alt="${cuadro.titulo}">
     <div class="overlay" data-id="${cuadro.id}">
     <a href="#" class="iconImg" data-id="${cuadro.id}"><i class="fa-solid fa-arrow-up-right-from-square" data-id="${cuadro.id}"></a></i>
@@ -92,24 +95,25 @@ const cargarProductoBuscadoEnTienda = () => {
     <div>$${cuadro.precio}</div>
     <button class="agregarCarro" data-id="${cuadro.id}">Agregar al carro</button> <button class="verProd" data-id="${cuadro.id}">Ver Cuadro</button>
     `;
-    listadoTienda.prepend(cuadroCreado);
-  });
-  const botonCuadro = document.querySelectorAll(".agregarCarro");
-  botonCuadro.forEach((button) => {
-    button.addEventListener("click", agregarProductoAlCarro);
-  });
-  const verProducto = document.querySelectorAll(".verProd");
-  verProducto.forEach((button) => {
-    button.addEventListener("click", verProductoSolo);
-  });
-  const verProductoOverlay = document.querySelectorAll(".overlay");
-  verProductoOverlay.forEach((button) => {
-    button.addEventListener("click", verProductoSolo);
-  });
-  const verProductoIconImg = document.querySelectorAll(".iconImg");
-  verProductoIconImg.forEach((button) => {
-    button.addEventListener("click", verProductoSolo);
-  });
+      listadoTienda.prepend(cuadroCreado);
+    });
+    const botonCuadro = document.querySelectorAll(".agregarCarro");
+    botonCuadro.forEach((button) => {
+      button.addEventListener("click", agregarProductoAlCarro);
+    });
+    const verProducto = document.querySelectorAll(".verProd");
+    verProducto.forEach((button) => {
+      button.addEventListener("click", verProductoSolo);
+    });
+    const verProductoOverlay = document.querySelectorAll(".overlay");
+    verProductoOverlay.forEach((button) => {
+      button.addEventListener("click", verProductoSolo);
+    });
+    const verProductoIconImg = document.querySelectorAll(".iconImg");
+    verProductoIconImg.forEach((button) => {
+      button.addEventListener("click", verProductoSolo);
+    });
+  }
 };
 
 //AGREGO PRODUCTOS AL CARRO
